@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Group Page</title>
+    <link rel="icon" href="Santo_Domingo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F1EAFF;
+            color: #333;
+        }
+
+        header {
+            background-color: #D0A2F7;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            background-color: #DCBFFF;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a,
+        .dropdown button {
+            color: #333;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #D0A2F7;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #D0A2F7;
+            color: white;
+        }
+
+        footer {
+            background-color: #D0A2F7;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .box-model {
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            border: 3px solid #D0A2F7;
+            box-sizing: border-box;
+        }
+
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: #D0A2F7;
+            animation: animateBox 2s infinite;
+        }
+
+        @keyframes animateBox {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(150px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .members-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .member {
+            text-align: center;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .member a {
+            display: block;
+            text-decoration: none;
+            color: #D0A2F7;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .member a:hover {
+            text-decoration: underline;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            /* Adjust as needed */
+            margin: 0 auto;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            /* Optional: Rounded corners */
+        }
+    </style>
+</head>
+
+<body>
+    <header>ICT Group Page</header>
+    <nav>
+        <a href="#" onclick="showContent('home')">Home</a>
+        <div class="dropdown">
+            <button>Quarters ▼</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('quarter1')">Quarter 1</a>
+                <a href="#" onclick="showContent('quarter2')">Quarter 2</a>
+                <a href="#" onclick="showContent('quarter3')">Quarter 3</a>
+            </div>
+        </div>
+        <a href="#" onclick="showContent('members')">Members</a>
+    </nav>
+
+    <div id="content" class="content">
+        <h2>Welcome to the ICT Group Page</h2>
+        <p>Select a quarter to see more information.</p>
+        <h2>Articles About ICT</h2>
+        <article>
+            <h3>What is ICT?</h3>
+            <p>Information and Communication Technology (ICT) refers to technologies that provide access to information through telecommunications. It includes the internet, wireless networks, cell phones, computers, and more.</p>
+        </article>
+        <article>
+            <h3>Importance of ICT in Education</h3>
+            <p>ICT plays a vital role in modern education, making learning more interactive and accessible. It helps students develop digital literacy skills and provides new ways to collaborate and research.</p>
+        </article>
+        <article>
+            <h3>How ICT Transforms Businesses</h3>
+            <p>From automating processes to enhancing communication, ICT has revolutionized businesses worldwide. Cloud computing, e-commerce, and digital marketing are some key advancements driven by ICT.</p>
+        </article>
+    </div>
+
+    <footer>Wikipedia</footer>
+
+    <script>
+        function showContent(section) {
+            var content = document.getElementById("content");
+            if (section === "home") {
+                content.innerHTML = `
+                    <h2>Welcome to the ICT Group Page</h2>
+                    <p>Select a quarter to see more information.</p>
+                `;
+            } else if (section === "quarter1") {
+                content.innerHTML = `
+                    <h2>Quarter 1: HTML & CSS Basics</h2>
+                    <table>
+                        <tr>
+                            <th>Formatting Elements</th>
+                        </tr>
+                        <tr>
+                            <td><b>Bold Text</b></td>
+                        </tr>
+                        <tr>
+                            <td><i>Italic Text</i></td>
+                        </tr>
+                        <tr>
+                            <td><u>Underlined Text</u></td>
+                        </tr>
+                        <tr>
+                            <td><em>Emphasized Text</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Strong Text</strong></td>
+                        </tr>
+                        <tr>
+                            <td><mark>Highlighted Text</mark></td>
+                        </tr>
+                        <tr>
+                            <td><del>Deleted Text</del></td>
+                        </tr>
+                        <tr>
+                            <td><ins>Inserted Text</ins></td>
+                        </tr>
+                        <tr>
+                            <td><s>Strikethrough Text</s></td>
+                        </tr>
+                        <tr>
+                            <td><sub>Subscript Text</sub></td>
+                        </tr>
+                        <tr>
+                            <td><sup>Superscript Text</sup></td>
+                        </tr>
+                    </table>
+                `;
+            } else if (section === "quarter2") {
+                content.innerHTML = `
+                    <h2>Quarter 2: Multimedia & Advanced CSS</h2>
+                    <h3>Mapping Example</h3>
+                    <iframe src="https://www.google.com/maps/embed?..." width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <h3>Picture Element</h3>
+                    <picture>
+                        <source srcset="Santo_Domingo.png" type="kina">
+                        <img src="Santo_Domingo.png" alt="example">
+                    </picture>
+                    <h3>Favicon</h3>
+                    <link rel="icon" href="Santo_Domingo.png">
+                    <h3>CSS Selectors (1, 2, 3)</h3>
+                    <p>Example styles will apply to elements with the corresponding class, id, or tag selector.</p>
+                    <h3>CSS Margin & Padding</h3>
+                    <div style="margin: 20px; padding: 15px; background-color: lightblue;">Example with margin and padding</div>
+                    <h3>Box Model</h3>
+                    <div class="box-model">
+                        Example of the box model.
+                    </div>
+                `;
+            } else if (section === "quarter3") {
+                content.innerHTML = `
+                    <h2>Quarter 3: JavaScript & Dynamic Webpages</h2>
+                    <p>This quarter will focus on learning JavaScript and creating dynamic webpages using scripts.</p>
+                `;
+            } else if (section === "members") {
+                content.innerHTML = `
+                    <h2>Group Members</h2>
+                    <div class="members-container">
+                        <div class="member">
+                            <img src="member1.jpg" alt="Member 1">
+                            <h3>Member 1</h3>
+                            <a href="mailto:member1@example.com">Contact</a>
+                        </div>
+                        <div class="member">
+                            <img src="member2.jpg" alt="Member 2">
+                            <h3>Member 2</h3>
+                            <a href="mailto:member2@example.com">Contact</a>
+                        </div>
+                        <div class="member">
+                            <img src="member3.jpg" alt="Member 3">
+                            <h3>Member 3</h3>
+                            <a href="mailto:member3@example.com">Contact</a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

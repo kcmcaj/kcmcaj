@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Group Page</title>
+    <link rel="icon" href="Santo_Domingo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F1EAFF;
+            color: #333;
+        }
+
+        header {
+            background-color: #D0A2F7;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            background-color: #DCBFFF;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a,
+        .dropdown button {
+            color: #333;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #D0A2F7;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #D0A2F7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #B886F4;
+        }
+
+        footer {
+            background-color: #D0A2F7;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>ICT Group Page</header>
+    <nav id="navbar">
+        <a href="#" onclick="showContent('home')">Home</a>
+        <div class="dropdown">
+            <button>Quarters ▼</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('quarter1'); hideNav()">Quarter 1</a>
+                <a href="#" onclick="showContent('quarter2'); hideNav()">Quarter 2</a>
+                <a href="#" onclick="showContent('quarter3'); hideNav()">Quarter 3</a>
+            </div>
+        </div>
+        <a href="#" onclick="showContent('members')">Members</a>
+    </nav>
+
+    <div id="content" class="content">
+        <h2>Home</h2>
+        <p>Welcome to our ICT group page! Here, you'll find our projects, activities, and progress throughout the school year.</p>
+    </div>
+
+    <button class="back-button" id="backButton" onclick="goBack()">Back</button>
+
+    <script>
+        function showContent(section) {
+            var content = document.getElementById("content");
+            var backButton = document.getElementById("backButton");
+
+            content.innerHTML = "";
+            backButton.style.display = "none"; // Hide back button by default
+
+            if (section === "home") {
+                showNav();
+                content.innerHTML = `
+                    <h2>Welcome to the ICT Group Page</h2>
+                    <p>Select a quarter to see more information.</p>
+                    <h2>Articles About ICT</h2>
+
+                    <article>
+                        <h3>What is ICT?</h3>
+                        <p>Information and Communication Technology (ICT) refers to technologies that provide access to information through telecommunications. It includes the internet, wireless networks, cell phones, computers, and more.</p>
+                    </article>
+
+                    <article>
+                        <h3>Importance of ICT in Education</h3>
+                        <p>ICT plays a vital role in modern education, making learning more interactive and accessible. It helps students develop digital literacy skills and provides new ways to collaborate and research.</p>
+                    </article>
+
+                    <article>
+                        <h3>How ICT Transforms Businesses</h3>
+                        <p>From automating processes to enhancing communication, ICT has revolutionized businesses worldwide. Cloud computing, e-commerce, and digital marketing are some key advancements driven by ICT.</p>
+                    </article>
+                `;
+            } else if (section === "quarter1") {
+                content.innerHTML = `
+                `;
+                    <h2>Quarter 1: HTML & CSS Basics</h2>
+                    <table>
+                        <tr>
+                            <th>Formatting Elements</th>
+                        </tr>
+                        <tr>
+                            <td><b>Bold Text</b></td>
+                        </tr>
+                        <tr>
+                            <td><i>Italic Text</i></td>
+                        </tr>
+                        <tr>
+                            <td><u>Underlined Text</u></td>
+                        </tr>
+                        <tr>
+                            <td><em>Emphasized Text</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Strong Text</strong></td>
+                        </tr>
+                        <tr>
+                            <td><mark>Highlighted Text</mark></td>
+                        </tr>
+                        <tr>
+                            <td><del>Deleted Text</del></td>
+                        </tr>
+                        <tr>
+                            <td><ins>Inserted Text</ins></td>
+                        </tr>
+                        <tr>
+                            <td><s>Strikethrough Text</s></td>
+                        </tr>
+                        <tr>
+                            <td><sub>Subscript Text</sub></td>
+                        </tr>
+                        <tr>
+                            <td><sup>Superscript Text</sup></td>
+                        </tr>
+                    </table>
+                `;
+                backButton.style.display = "block"; // Show back button
+            } else if (section === "quarter2") {
+                content.innerHTML = `
+                  <h2>Quarter 2: Multimedia & Advanced CSS</h2>
+                    <h3>Picture Element</h3>
+                    <picture>
+                        <source srcset="Santo_Domingo.png" type="image/png">
+                        <img src="Santo_Domingo.png" alt="example">
+                    </picture>
+                    <h3>Favicon</h3>
+                    <link rel="icon" href="Santo_Domingo.png">
+                    <h3>CSS Selectors (1, 2, 3)</h3>
+                    <p>Example styles will apply to elements with the corresponding class, id, or tag selector.</p>
+                    <h3>CSS Margin & Padding</h3>
+                    <div style="margin: 20px; padding: 15px; background-color: lightblue;">Example with margin and padding</div>
+                    <h3>Box Model</h3>
+                    <div class="box-model">Box Model Example</div>
+                    <h3>Multimedia Elements</h3>
+                    <div class="video-container">
+                        <video controls>
+                            <source src="awit.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <audio controls>
+                        <source src="audio-file.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+            } else if (section === "quarter3") {
+                content.innerHTML = `
+                    <h2>Quarter 3: Text Decoration, Navigation, & Animation</h2>
+                    <h3>Text Decoration</h3>
+                    <p>Text decoration allows you to style text elements, such as adding underlines, overlines, or strikethroughs.</p>
+                    <a href="https://sites.google.com/view/teacher-joseph/home?fbclid=IwZXh0bgNhZW0CMTEAAR07UxS5nOaiYO4PzcwpICf4-8_e-LYP2QQpnLdinARlgonXWdUH_Y3SXMc_aem_LIfEm28Df4zD15HgCmQTYg">This is a link with underline</a><br>
+                    <p style="text-decoration: line-through;">This is a paragraph with strikethrough.</p>
+                    <h3>Navigation</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="mission.html">Mission</a></li>
+                            <li><a href="vision.html">Vision</a></li>
+                            <li><a href="core_values.html">Core Values</a></li>
+                        </ul>
+                    </nav>
+                    <h3>Animation</h3>
+                    <div class="animated-box"></div>
+                `;
+                backButton.style.display = "block"; // Show back button
+            } else if (section === "members") {
+                showNav();
+                content.innerHTML = `
+                   <h2>Group Members</h2>
+                    <div class="members-container">
+                        <div class="member">
+                            <img src="gab.jpeg" alt="Gab">
+                            <p><strong>John Gabriel Opriasa</strong></p>
+                            <a href="https://www.facebook.com/johngabriel.opriasa" target="_blank">Facebook Profile</a>
+                        </div>
+                        <div class="member">
+                            <img src="iyah.jpeg" alt="Iyah">
+                            <p><strong>Katrina De Rafael</strong></p>
+                            <a href="https://www.facebook.com/profile.php?id=61550965433143" target="_blank">Facebook Profile</a>
+                        </div>
+                        <div class="member">
+                            <img src="karina.jpeg" alt="Karina">
+                            <p><strong>Karina Compas</strong></p>
+                            <a href="https://www.facebook.com/pangalanq.09" target="_blank">Facebook Profile</a>
+                        </div>
+                        <div class="member">
+                            <img src="avie.jpeg" alt="Avie">
+                            <p><strong>Nicole Marantal</strong></p>
+                            <a href="https://www.facebook.com/nicoleavie.marantal" target="_blank">Facebook Profile</a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function hideNav() {
+            document.getElementById("navbar").classList.add("hidden");
+        }
+
+        function showNav() {
+            document.getElementById("navbar").classList.remove("hidden");
+        }
+
+        function goBack() {
+            showNav();
+            showContent("home"); // Goes back to the home page
+        }
+    </script>
+</body>
+
+</html>

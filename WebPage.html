@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Group Page</title>
+    <link rel="icon" href="Santo_Domingo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F1EAFF;
+            color: #333;
+        }
+        header {
+            background-color: #D0A2F7;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        nav {
+            background-color: #DCBFFF;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a, .dropdown button {
+            color: #333;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background-color: #D0A2F7;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #D0A2F7;
+            color: white;
+        }
+        footer {
+            background-color: #D0A2F7;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .box-model {
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            border: 3px solid #D0A2F7;
+            box-sizing: border-box;
+        }
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: #D0A2F7;
+            animation: animateBox 2s infinite;
+        }
+        @keyframes animateBox {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(150px); }
+            100% { transform: translateX(0); }
+        }
+        .members-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .member {
+            text-align: center;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .member a {
+            display: block;
+            text-decoration: none;
+            color: #D0A2F7;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .member a:hover {
+            text-decoration: underline;
+        }
+        .video-container {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+         }.video-container video { width: 100%; height: auto; display: block; border-radius: 10px; /* Optional: Rounded corners */ } </style>
+
+</head>
+<body>
+    <header>ICT Group Page</header>
+    <nav>
+        <a href="#">Home</a>
+        <div class="dropdown">
+            <button>Quarters ▼</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('quarter1')">Quarter 1</a>
+                <a href="#" onclick="showContent('quarter2')">Quarter 2</a>
+                <a href="#" onclick="showContent('quarter3')">Quarter 3</a>
+            </div>
+        </div>
+        <a href="#" onclick="showContent('members')">Members</a>
+    </nav>
+    <div id="content" class="content">
+    <h2>Welcome to the ICT Group Page</h2>
+    <p>Select a quarter to see more information.</p><h2>Articles About ICT</h2>
+
+<article>
+    <h3>What is ICT?</h3>
+    <p>Information and Communication Technology (ICT) refers to technologies that provide access to information through telecommunications. It includes the internet, wireless networks, cell phones, computers, and more.</p>
+</article>
+
+<article>
+    <h3>Importance of ICT in Education</h3>
+    <p>ICT plays a vital role in modern education, making learning more interactive and accessible. It helps students develop digital literacy skills and provides new ways to collaborate and research.</p>
+</article>
+
+<article>
+    <h3>How ICT Transforms Businesses</h3>
+    <p>From automating processes to enhancing communication, ICT has revolutionized businesses worldwide. Cloud computing, e-commerce, and digital marketing are some key advancements driven by ICT.</p>
+</article>
+</div>
+<footer>Wikipedia</footer>
+<script>
+    function showContent(section) {
+        var content = document.getElementById("content");
+        if (section === "quarter1") {
+            content.innerHTML = `
+                <h2>Quarter 1: HTML & CSS Basics</h2>
+                <table>
+                    <tr>
+                        <th>Formatting Elements</th>
+                    </tr>
+                    <tr>
+                        <td><b>Bold Text</b></td>
+                    </tr>
+                    <tr>
+                        <td><i>Italic Text</i></td>
+                    </tr>
+                    <tr>
+                        <td><u>Underlined Text</u></td>
+                    </tr>
+                    <tr>
+                        <td><em>Emphasized Text</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Strong Text</strong></td>
+                    </tr>
+                    <tr>
+                        <td><mark>Highlighted Text</mark></td>
+                    </tr>
+                    <tr>
+                        <td><del>Deleted Text</del></td>
+                    </tr>
+                    <tr>
+                        <td><ins>Inserted Text</ins></td>
+                    </tr>
+                    <tr>
+                        <td><s>Strikethrough Text</s></td>
+                    </tr>
+                    <tr>
+                        <td><sub>Subscript Text</sub></td>
+                    </tr>
+                    <tr>
+                        <td><sup>Superscript Text</sup></td>
+                    </tr>
+                </table>
+            `;
+        }
+        else if (section === "quarter2") {
+            content.innerHTML = `
+                <h2>Quarter 2: Multimedia & Advanced CSS</h2>
+                <h3>Mapping Example</h3>
+                <iframe src="https://www.google.com/maps/embed?..." width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <h3>Picture Element</h3>
+                <picture>
+                    <source srcset="Santo_Domingo.png" type="kina">
+                    <img src="Santo_Domingo.png" alt="example">
+                </picture>
+                <h3>Favicon</h3>
+                <link rel="icon" href="Santo_Domingo.png">
+                <h3>CSS Selectors (1, 2, 3)</h3>
+                <p>Example styles will apply to elements with the corresponding class, id, or tag selector.</p>
+                <h3>CSS Margin & Padding</h3>
+                <div style="margin: 20px; padding: 15px; background-color: lightblue;">Example with margin and padding</div>
+                <h3>Box Model</h3>
+                <div class="box-model">Box Model Example</div>
+                <h3>Multimedia Elements</h3>
+
+<div class="video-container">
+    <video controls>
+        <source src="awit.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div><audio controls>
+    <source src="Ang Huling El Bimbo.m4a" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+                `;
+            }
+            else if (section === "quarter3") {
+                content.innerHTML = `
+                    <h2>Quarter 3: Text Decoration, Navigation, & Animation</h2>
+                    <h3>Text Decoration</h3>
+                    <p>Text decoration allows you to style text elements, such as adding underlines, overlines, or strikethroughs.</p>
+                    <a href="https://sites.google.com/view/teacher-joseph/home?fbclid=IwZXh0bgNhZW0CMTEAAR07UxS5nOaiYO4PzcwpICf4-8_e-LYP2QQpnLdinARlgonXWdUH_Y3SXMc_aem_LIfEm28Df4zD15HgCmQTYg">This is a link with underline</a><br>
+                    <p style="text-decoration: line-through;">This is a paragraph with strikethrough.</p>
+                    <h3>Navigation</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="mission.html">Mission</a></li>
+                            <li><a href="vision.html">Vision</a></li>
+                            <li><a href="core_values.html">Core Values</a></li>
+                        </ul>
+                    </nav>
+                    <h3>Animation</h3>
+                    <div class="animated-box"></div>
+                `;
+            }
+            else if (section === "members") {
+                content.innerHTML = `
+                    <h2>Group Members</h2>
+                    <div class="members-container">
+                        <div class="member">
+                            <img src="gab.jpeg" alt="Gab">
+                            <p><strong>John Gabriel Opriasa</strong></p>
+                            <a href="https://www.facebook.com/johngabriel.opriasa" target="_blank">Facebook Profile</a>
+                        </div>
+                        <div class="member">
+                            <img src="iyah.jpeg" alt="Iyah">
+                            <p><strong>Katrina De Rafael</strong></p>
+                            <a href="https://www.facebook.com/profile.php?id=61550965433143" target="_blank">Facebook Profile</a>
+                        </div>
+                        <div class="member">
+                            <img src="karina.jpeg" alt="Karina">
+                            <p><strong>Karina Compas</strong></p>
+                            <a href="https://www.facebook.com/pangalanq.09" target="_blank">Facebook Profile</a>
+                        </div>
+                        <div class="member">
+                            <img src="avie.jpeg" alt="Avie">
+                            <p><strong>Nicole Marantal</strong></p>
+                            <a href="https://www.facebook.com/nicoleavie.marantal" target="_blank">Facebook Profile</a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
+
